@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://dwk7ncwppvg5e"]
+[gd_scene load_steps=4 format=3 uid="uid://dwk7ncwppvg5e"]
+
+[ext_resource type="PackedScene" uid="uid://c5nxmpdh08wmu" path="res://player.tscn" id="1_7ugfx"]
+[ext_resource type="Script" path="res://main.gd" id="1_24p03"]
+[ext_resource type="PackedScene" uid="uid://doywy5g7qmmpi" path="res://crosshair.tscn" id="3_74260"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_24p03")
+
+[node name="player" parent="." instance=ExtResource("1_7ugfx")]
+position = Vector2(194, 177)
+
+[node name="crosshair" parent="." instance=ExtResource("3_74260")]

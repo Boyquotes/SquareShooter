@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://doywy5g7qmmpi"]
+
+[ext_resource type="Texture2D" uid="uid://cpnpda02w1qed" path="res://res/crosshair.png" id="1_lnw7q"]
+
+[node name="crosshair" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_lnw7q")

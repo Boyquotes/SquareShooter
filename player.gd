@@ -3,7 +3,7 @@ extends CharacterBody2D
 var movementSpeed = 333.0
 
 func _ready() -> void:
-	pass
+	$AnimatedSprite2D.play("idle")
 
 
 func _physics_process(delta: float) -> void:
@@ -13,7 +13,11 @@ func _physics_process(delta: float) -> void:
 	movement_vector = movement_vector.normalized()
 	velocity = movement_vector * movementSpeed
 	move_and_slide()
-
+	
+	if (movement_vector.x != 0 || movement_vector.y != 0):
+		$AnimatedSprite2D.play("run")
+	else:
+		$AnimatedSprite2D.play("idle")
 
 func _process(delta: float) -> void:
 	pass

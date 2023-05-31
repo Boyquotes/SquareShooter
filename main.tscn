@@ -1,13 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwk7ncwppvg5e"]
+[gd_scene load_steps=6 format=3 uid="uid://dwk7ncwppvg5e"]
 
 [ext_resource type="PackedScene" uid="uid://c5nxmpdh08wmu" path="res://player.tscn" id="1_7ugfx"]
 [ext_resource type="Script" path="res://main.gd" id="1_24p03"]
+[ext_resource type="Texture2D" uid="uid://dksujbnsxut7y" path="res://res/sBg.png" id="2_3fgxn"]
+[ext_resource type="PackedScene" uid="uid://dy3sf78c2af6r" path="res://gun.tscn" id="3_3i0n7"]
 [ext_resource type="PackedScene" uid="uid://doywy5g7qmmpi" path="res://crosshair.tscn" id="3_74260"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_24p03")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(10, 10)
+texture = ExtResource("2_3fgxn")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
+texture_filter = 1
+scale = Vector2(10, 10)
+texture = ExtResource("2_3fgxn")
+centered = false
+
+[node name="gun" parent="." instance=ExtResource("3_3i0n7")]
+position = Vector2(193, 177)
+
 [node name="player" parent="." instance=ExtResource("1_7ugfx")]
 position = Vector2(194, 177)
 
 [node name="crosshair" parent="." instance=ExtResource("3_74260")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1.09873, 0.821838)
+anchor_mode = 0
+zoom = Vector2(2, 2)

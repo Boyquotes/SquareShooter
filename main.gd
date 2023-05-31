@@ -2,17 +2,24 @@ extends Node2D
 
 var bullet : PackedScene = preload("res://bullet.tscn")
 var crosshair : Sprite2D
+var gun : Sprite2D
 var player : CharacterBody2D
 var shotgun_clip : int = 8
 
 func _ready() -> void:
 	crosshair = get_node("crosshair")
 	player = get_node("player")
+	gun = get_node("gun")
+
+
+func _physics_process(delta: float) -> void:
+	gun.position = player.position
 
 
 func _process(delta: float) -> void:
 	crosshair.position.x = get_global_mouse_position().x
 	crosshair.position.y = get_global_mouse_position().y
+	gun.look_at(crosshair.position)
 	
 	if Input.is_action_just_pressed("lmb"):
 		if (shotgun_clip > 0):

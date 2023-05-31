@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy3sf78c2af6r"]
+
+[ext_resource type="Texture2D" uid="uid://d1dyycrof8gtw" path="res://res/sGun.png" id="1_2fone"]
+
+[node name="gun" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_2fone")
+centered = false
+offset = Vector2(-4, -10)

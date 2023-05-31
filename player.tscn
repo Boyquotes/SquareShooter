@@ -105,8 +105,8 @@ script = ExtResource("1_brv2u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3af0t")
-animation = &"run"
-frame_progress = 0.506249
+animation = &"idle"
+frame_progress = 0.437039
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xevut")
